@@ -163,8 +163,7 @@ function bftrans(ch,dir){
            ch.match(/[\u30e0-\u9fcf]/) ?
                 ( dir>0 ? "+" : "-" ) : undefined;
 }
-const runeDict = "\u16A0\u16A2\u16A7\u16AB\u16B1\u16B2\u16B7\u16BA\u16C7\u16C8\u
-16C9\u16D7\u16DA\u16DE\u16E9\u16CB";
+const runeDict = "\u16A0\u16A2\u16A7\u16AB\u16B1\u16B2\u16B7\u16BA\u16C7\u16C8\u16C9\u16D7\u16DA\u16DE\u16E9\u16CB";
 function rune2num(rune){
     if(rune=="") return 0;
     let num = 0;
