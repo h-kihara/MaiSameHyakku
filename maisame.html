@@ -1,8 +1,8 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head>
 <meta name="viewport" content="width=device-width">
-<title>���J�S��</title>
+<title>舞雨百句</title>
 <style>
 body {
   text-align: center;
@@ -81,40 +81,40 @@ textarea {
     </g>
 </svg>
 </div>
-<h1 id="title">���J�S��</h1>
+<h1 id="title">舞雨百句</h1>
 <h3>
-    <ruby>�Z�@�F<rt>�v���O���~���O</rt></ruby>�Ƃ́A
-    <ruby>�r<rt>����</rt></ruby>�����Ƃƌ�������
+    <ruby>算法認<rt>プログラミング</rt></ruby>とは、
+    <ruby>詠<rt>うた</rt></ruby>うことと見つけたり
 </h3>
 <div>
-<button onclick="sample();">���́i�T���v���j</button>
+<button onclick="sample();">第一歌（サンプル）</button>
 </div>
 <div>
 <textarea id="spellarea" rows="12">
 </textarea>
 </div>
-<button onclick="reset();">�C�P</button>
-<button onclick="brand();">����</button>
+<button onclick="reset();">修祓</button>
+<button onclick="brand();">烙込</button>
 <div id="displayarea"></div>
 <div id="memoryarea"><span id="memtarget"></span></div>
-<button id="reciteButton" onclick="recite();">�r��</button>
+<button id="reciteButton" onclick="recite();">詠唱</button>
 <div><span id="outputarea"></span></div>
 
 <script>
 
 function sample(){
 document.getElementById('spellarea').textContent =
-'�Î�Ȃ����A�����Ȃ����A���Ȃ��O�E�Ƃ炵' + '\n' +
-'���݂����݂��A�@���ɏ����A�����W����B' + '\n' +
-'�������A���ւ��A�₦���삯�B' + '\n' +
-'���ɉ��ɁA���Ɋ[�ЂƂ�Â��B' + '\n' +
-'�l��ɔ�����߂ɉ���A�����{�A�ܓV��˂��듃�B' + '\n' +
-'�r���������A���Z�Ђ��������]����S�A' + '\n' +
-'�����V�W�A���͍R�����V�A�r�Ȃ���ɘ����B' + '\n' +
-'��������b�A���߂��̍g������B' + '\n' +
-'�~悋������������͍ėՂ���B' + '\n' +
-'�\�w�[���ɌN�Ղ����]���o�ƂɎ���Ⴋ���l��I' + '\n' +
-'�w���́G��؂̊�����Ă�x�I�I�I';
+'静寂なき虚、安息なき現、光なき三界照らし' + '\n' +
+'顕在し潜在し、法則に順ず、明く燦する。' + '\n' +
+'答えず、応へず、絶えず跪け。' + '\n' +
+'下に下に、朝に骸ひとり暗し。' + '\n' +
+'四大に叛く大罪に応報、劈く嘴、曇天を突く尖塔。' + '\n' +
+'屍こそ平穏、咎を纏ひしを高く讃する唄、' + '\n' +
+'蒼く天蓋、其は抗う熾天、腕なき主に傅く。' + '\n' +
+'黒く呻けき獣、騒めきの紅き炎よ。' + '\n' +
+'諧謔狂おしき饗宴は再臨する。' + '\n' +
+'十層深きに君臨する絶望苦を双眸に視よ若き旅人よ！' + '\n' +
+'『第一歌；一切の希を棄てよ』！！！';
 }
 
 function reset(){
@@ -130,7 +130,7 @@ function reset(){
 function brand(){
     reset();
     let spell = document.getElementById("spellarea").value;
-    spell = spell.replace(/�w[^�x]*�x|�i[^�j]*�j/g,"");
+    spell = spell.replace(/『[^』]*』|（[^）]*）/g,"");
     const lines = spell.split('\n');
     const displayarea = document.getElementById("displayarea");
     let dir = 1;
@@ -146,7 +146,7 @@ function brand(){
                 span.textContent=ch;
                 div.appendChild(span);
             }
-            if(ch=="�B"){
+            if(ch=="。"){
                 dir = -dir;
             }
         }
@@ -155,11 +155,11 @@ function brand(){
 }
 
 function bftrans(ch,dir){
-    return ch.match(/[���������Ȃ͂܂��킪�����΂�]/) ? "[" :
-           ch.match(/[���������ɂЂ�**��**�������т�]/) ? ">" :
-           ch.match(/[�������ʂӂނ��**�����ÂԂ�]/) ? "<" :
-           ch.match(/[�������Ă˂ւ�**��**�����łׂ�]/) ? "]" :
-           ch.match(/[�������Ƃ̂ق����������ǂڂ�]/) ? "." :
+    return ch.match(/[あかさたなはまやらわがざだばぱ]/) ? "[" :
+           ch.match(/[いきしちにひみ**り**ぎじぢびぴ]/) ? ">" :
+           ch.match(/[うくすつぬふむゆる**ぐずづぶぷ]/) ? "<" :
+           ch.match(/[えけせてねへめ**れ**げぜでべぺ]/) ? "]" :
+           ch.match(/[おこそとのほもよろをごぞどぼぽ]/) ? "." :
            ch.match(/[\u30e0-\u9fcf]/) ?
                 ( dir>0 ? "+" : "-" ) : undefined;
 }
